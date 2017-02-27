@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		1FA1365F1E63A4240024C561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA1365E1E63A4240024C561 /* AppDelegate.swift */; };
-		1FA136611E63A4240024C561 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA136601E63A4240024C561 /* ViewController.swift */; };
 		1FA136641E63A4240024C561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA136621E63A4240024C561 /* Main.storyboard */; };
 		1FA136661E63A4240024C561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA136651E63A4240024C561 /* Assets.xcassets */; };
 		1FA136691E63A4240024C561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA136671E63A4240024C561 /* LaunchScreen.storyboard */; };
+		1FA136711E63A5130024C561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FA136701E63A5130024C561 /* GoogleService-Info.plist */; };
+		1FA136731E63A9430024C561 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA136721E63A9430024C561 /* SignInViewController.swift */; };
+		9D83C7073E45B2F8244DD513 /* Pods_rolll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B6AA718E4B76882DDD0DF0 /* Pods_rolll.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04B6AA718E4B76882DDD0DF0 /* Pods_rolll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rolll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA1365B1E63A4240024C561 /* rolll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rolll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA1365E1E63A4240024C561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1FA136601E63A4240024C561 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FA136631E63A4240024C561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FA136651E63A4240024C561 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FA136681E63A4240024C561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FA1366A1E63A4240024C561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FA136701E63A5130024C561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1FA136721E63A9430024C561 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		33AA6960F0B46EDB4F87049A /* Pods-rolll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rolll.release.xcconfig"; path = "Pods/Target Support Files/Pods-rolll/Pods-rolll.release.xcconfig"; sourceTree = "<group>"; };
+		CA2EB8460D62D5D89C803858 /* Pods-rolll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rolll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rolll/Pods-rolll.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D83C7073E45B2F8244DD513 /* Pods_rolll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				1FA1365D1E63A4240024C561 /* rolll */,
 				1FA1365C1E63A4240024C561 /* Products */,
+				8FB9F701CFE1639C42E2DCD4 /* Pods */,
+				50FA13D0720236653CABC3BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +63,56 @@
 		1FA1365D1E63A4240024C561 /* rolll */ = {
 			isa = PBXGroup;
 			children = (
-				1FA1365E1E63A4240024C561 /* AppDelegate.swift */,
-				1FA136601E63A4240024C561 /* ViewController.swift */,
-				1FA136621E63A4240024C561 /* Main.storyboard */,
+				1FA136761E63A9610024C561 /* Model */,
+				1FA136751E63A9540024C561 /* UI */,
+				1FA136741E63A9490024C561 /* View Controller */,
 				1FA136651E63A4240024C561 /* Assets.xcassets */,
-				1FA136671E63A4240024C561 /* LaunchScreen.storyboard */,
 				1FA1366A1E63A4240024C561 /* Info.plist */,
+				1FA136701E63A5130024C561 /* GoogleService-Info.plist */,
 			);
 			path = rolll;
+			sourceTree = "<group>";
+		};
+		1FA136741E63A9490024C561 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1FA136721E63A9430024C561 /* SignInViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		1FA136751E63A9540024C561 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1FA136621E63A4240024C561 /* Main.storyboard */,
+				1FA136671E63A4240024C561 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		1FA136761E63A9610024C561 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FA1365E1E63A4240024C561 /* AppDelegate.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		50FA13D0720236653CABC3BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04B6AA718E4B76882DDD0DF0 /* Pods_rolll.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FB9F701CFE1639C42E2DCD4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA2EB8460D62D5D89C803858 /* Pods-rolll.debug.xcconfig */,
+				33AA6960F0B46EDB4F87049A /* Pods-rolll.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +122,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FA1366D1E63A4240024C561 /* Build configuration list for PBXNativeTarget "rolll" */;
 			buildPhases = (
+				9E8EC0D1D012715503F7B48D /* [CP] Check Pods Manifest.lock */,
 				1FA136571E63A4240024C561 /* Sources */,
 				1FA136581E63A4240024C561 /* Frameworks */,
 				1FA136591E63A4240024C561 /* Resources */,
+				349E8A37549B0333523AF86D /* [CP] Embed Pods Frameworks */,
+				A348AB92B721C6E320DAC923 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,18 +180,67 @@
 				1FA136691E63A4240024C561 /* LaunchScreen.storyboard in Resources */,
 				1FA136661E63A4240024C561 /* Assets.xcassets in Resources */,
 				1FA136641E63A4240024C561 /* Main.storyboard in Resources */,
+				1FA136711E63A5130024C561 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		349E8A37549B0333523AF86D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rolll/Pods-rolll-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E8EC0D1D012715503F7B48D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A348AB92B721C6E320DAC923 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rolll/Pods-rolll-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FA136571E63A4240024C561 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FA136611E63A4240024C561 /* ViewController.swift in Sources */,
 				1FA1365F1E63A4240024C561 /* AppDelegate.swift in Sources */,
+				1FA136731E63A9430024C561 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,11 +361,12 @@
 		};
 		1FA1366E1E63A4240024C561 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA2EB8460D62D5D89C803858 /* Pods-rolll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = rolll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "carmen-cheng.rolll";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carmen-cheng.rolll";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -270,11 +374,12 @@
 		};
 		1FA1366F1E63A4240024C561 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33AA6960F0B46EDB4F87049A /* Pods-rolll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = rolll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "carmen-cheng.rolll";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.carmen-cheng.rolll";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -299,6 +404,7 @@
 				1FA1366F1E63A4240024C561 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
