@@ -1,42 +1,41 @@
 //
-//  SignInViewController.swift
+//  ProfileViewController.swift
 //  rolll
 //
-//  Created by carmen cheng on 2017-02-26.
+//  Created by carmen cheng on 2017-03-01.
 //  Copyright © 2017 carmen cheng. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class SignInViewController: UIViewController {
+class ProfileViewController: UIViewController {
     
     //MARK: - Properties -
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    
-    
-    //MARK: - View -
 
+    //MARK: - View - 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
     
+    //MARK: - Buttons - 
     
-    //MARK: - Buttons -
-    
-    @IBAction func loginButton(_ sender: Any) {
-        
+    @IBAction func signoutButton(_ sender: Any) {
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
 
     
-    @IBAction func signupButton(_ sender: Any) {
-        
-    }
     
-    
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
