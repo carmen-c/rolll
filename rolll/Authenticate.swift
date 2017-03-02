@@ -17,6 +17,7 @@ class Auth: NSObject {
             
             if let error = error {
                 completion(error)
+                
             }else {
                 let currentUser = User.sharedInstance
                 currentUser.uid = user?.uid
@@ -34,6 +35,7 @@ class Auth: NSObject {
             
             if let error = error {
                 completion(error)
+                
             }else {
                 let currentUser = User.sharedInstance
                 currentUser.uid = user?.uid
