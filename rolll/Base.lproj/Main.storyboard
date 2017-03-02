@@ -439,7 +439,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="ocf-jR-FNR"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="Profile" id="ocf-jR-FNR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opj-qM-scE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -448,7 +448,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="wBO-e0-PLC">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7e6-OO-42x" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabby" automaticallyAdjustsScrollViewInsets="NO" id="7e6-OO-42x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="zVh-3l-1XW">
                         <autoresizingMask key="autoresizingMask"/>
