@@ -17,6 +17,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     
+    var isFirstLogin = false
+    
     //MARK: - View -
 
     override func viewDidLoad() {
@@ -27,15 +29,49 @@ class SignInViewController: UIViewController {
     //MARK: - Buttons -
     
     @IBAction func loginButton(_ sender: Any) {
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        login(email: email, pass: password)
         
     }
 
-    
     @IBAction func signupButton(_ sender: Any) {
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
         
+        signup(email: email, pass: password)
     }
     
     
+    //MARK: - Functions -
+        
+    func login (email: String, pass: String) {
+        Auth.login(email: email, pass: pass, completion: { (error) in
+            
+            if error != nil {
+                print(error)
+            }
+            else{
+                self.performSegue(withIdentifier: "login", sender: nil)
+            }
+        })
+    }
+    
+    func signup (email: String, pass: String) {
+        Auth.createUser(email: email, pass: pass, completion: { (error) in
+            
+            if error != nil{
+                print(error)
+            }
+            else{
+                self.isFirstLogin = true
+                self.login(email: email, pass: pass)
+            }
+        })
+    }
+        
+        
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
