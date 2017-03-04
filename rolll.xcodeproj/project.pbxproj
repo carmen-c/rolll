@@ -52,6 +52,7 @@
 		1FD2EA581E6A5F5A005AB555 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
 		1FD2EA5A1E6A5F70005AB555 /* StoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 		1FD2EA5C1E6A6096005AB555 /* CreationStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreationStoreViewController.swift; sourceTree = "<group>"; };
+		1FD2EA621E6A782E005AB555 /* rolll.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rolll.entitlements; sourceTree = "<group>"; };
 		33AA6960F0B46EDB4F87049A /* Pods-rolll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rolll.release.xcconfig"; path = "Pods/Target Support Files/Pods-rolll/Pods-rolll.release.xcconfig"; sourceTree = "<group>"; };
 		CA2EB8460D62D5D89C803858 /* Pods-rolll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rolll.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rolll/Pods-rolll.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +90,7 @@
 		1FA1365D1E63A4240024C561 /* rolll */ = {
 			isa = PBXGroup;
 			children = (
+				1FD2EA621E6A782E005AB555 /* rolll.entitlements */,
 				1FA136761E63A9610024C561 /* Model */,
 				1FA136751E63A9540024C561 /* UI */,
 				1FA136741E63A9490024C561 /* View Controller */,
