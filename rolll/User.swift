@@ -17,10 +17,8 @@ class User: NSObject {
     var email: String?
     var username: String?
     var about: String?
-    var posts: Int?
+    var posts: [String]?
     var points: Int?
-    var sentPets: Int?
-    var collection: [String]?
     
     static let sharedInstance = User()
     
@@ -35,8 +33,6 @@ class User: NSObject {
         result["about"] = about
         result["posts"] = posts
         result["points"] = points
-        result["sentPets"] = sentPets
-        result["collection"] = collection
         
         return result
     }
@@ -54,10 +50,8 @@ class User: NSObject {
             let snapshotValue = snapshot.value as! [String: Any?]
             self.username = snapshotValue["username"] as? String
             self.about = snapshotValue["about"] as? String
-            self.posts = snapshotValue["posts"] as? Int
+            self.posts = snapshotValue["posts"] as? [String]
             self.points = snapshotValue["points"] as? Int
-            self.sentPets = snapshotValue["sentPets"] as? Int
-            self.collection = snapshotValue["collection"] as? [String]
             
             completion()
         })
