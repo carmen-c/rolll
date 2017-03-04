@@ -113,11 +113,12 @@ class SignInViewController: UIViewController {
     }
     
     func showError(errorMsg: String?) {
-        let errorMsg = UIAlertController(title: "Oops!", message: "\(errorMsg)", preferredStyle: .alert)
+        let unwrapError = errorMsg ?? "Unknown error"
+        let errorMsgAlert = UIAlertController(title: "Oops!", message: "\(unwrapError)", preferredStyle: .alert)
         
-        errorMsg.addAction(UIAlertAction(title: "Ok", style: .default))
+        errorMsgAlert.addAction(UIAlertAction(title: "Ok", style: .default))
         
-        self.present(errorMsg, animated: true, completion: nil)
+        self.present(errorMsgAlert, animated: true, completion: nil)
     }
         
     
