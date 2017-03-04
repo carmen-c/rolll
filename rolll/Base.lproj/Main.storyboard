@@ -61,8 +61,16 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOX-Rh-Xm1">
+                                <rect key="frame" x="128" y="587" width="119" height="30"/>
+                                <state key="normal" title="forgot password?"/>
+                                <connections>
+                                    <action selector="forgotPass:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xol-eA-SyM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="HVw-pB-8Pv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="3de-di-pwP"/>
                             <constraint firstItem="XQe-J7-u1S" firstAttribute="width" secondItem="uqR-Ew-fil" secondAttribute="width" id="KF6-Jh-4oH"/>
@@ -72,7 +80,12 @@
                             <constraint firstItem="uqR-Ew-fil" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bot-80-8Ye"/>
                             <constraint firstItem="XQe-J7-u1S" firstAttribute="top" secondItem="uqR-Ew-fil" secondAttribute="bottom" constant="41" id="deE-vw-wx0"/>
                             <constraint firstItem="uqR-Ew-fil" firstAttribute="width" secondItem="HVw-pB-8Pv" secondAttribute="width" id="evz-Dn-GBo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zOX-Rh-Xm1" secondAttribute="bottom" constant="50" id="z7n-Yp-msz"/>
+                            <constraint firstItem="zOX-Rh-Xm1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zGE-47-nbm"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="JBU-or-6KK" appends="YES" id="hps-Hz-cKy"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="HVw-pB-8Pv" id="heK-ic-BcA"/>
@@ -82,6 +95,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JBU-or-6KK">
+                    <connections>
+                        <action selector="tap:" destination="BYZ-38-t0r" id="V99-Nm-3nE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="125.59999999999999" y="364.7676161919041"/>
         </scene>

@@ -19,9 +19,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
     var isFirstLogin = false
-
+    var statusAlert: UIAlertController?
     
     //MARK: - View -
 
@@ -47,6 +46,17 @@ class SignInViewController: UIViewController {
         signup(email: email, pass: password)
     }
     
+    @IBAction func forgotPass(_ sender: Any) {
+        showForgotAlert()
+    }
+    
+    @IBAction func tap(_ sender: Any) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+    }
+
+
+    
     
     //MARK: - Functions -
         
@@ -54,7 +64,7 @@ class SignInViewController: UIViewController {
         Auth.login(email: email, pass: pass, completion: { (error) in
             
             if error != nil {
-                print(error)
+                self.showError(errorMsg: error?.localizedDescription)
             }
             else if self.isFirstLogin == true {
                 self.performSegue(withIdentifier: newUser, sender: nil)
@@ -69,7 +79,7 @@ class SignInViewController: UIViewController {
         Auth.createUser(email: email, pass: pass, completion: { (error) in
             
             if error != nil{
-                print(error)
+                self.showError(errorMsg: error?.localizedDescription)
             }
             else{
                 self.isFirstLogin = true
@@ -77,7 +87,38 @@ class SignInViewController: UIViewController {
             }
         })
     }
+      
+    func showForgotAlert() {
+        let forgotPass = UIAlertController(title: "Forgot Password", message: "enter your email", preferredStyle: .alert)
         
+        forgotPass.addTextField { (textfield) in
+            textfield.text = ""
+        }
+        
+        forgotPass.addAction(UIAlertAction(title: "Cancel", style: .default))
+        forgotPass.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (action) -> Void in
+            let textfield = forgotPass.textFields![0] as UITextField
+            Auth.forgotPassword(email: textfield.text ?? "", completion: { (error) in
+                
+                if error != nil{
+                    self.showError(errorMsg: error?.localizedDescription)
+                }
+                else{
+                    
+                }
+            })
+        }))
+        
+        self.present(forgotPass, animated: true, completion: nil)
+    }
+    
+    func showError(errorMsg: String?) {
+        let errorMsg = UIAlertController(title: "Oops!", message: "\(errorMsg)", preferredStyle: .alert)
+        
+        errorMsg.addAction(UIAlertAction(title: "Ok", style: .default))
+        
+        self.present(errorMsg, animated: true, completion: nil)
+    }
         
     
     override func didReceiveMemoryWarning() {
