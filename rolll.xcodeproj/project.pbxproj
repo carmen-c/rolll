@@ -133,7 +133,6 @@
 		1FD2EA5E1E6A6212005AB555 /* Storyboard created */ = {
 			isa = PBXGroup;
 			children = (
-				1FA136721E63A9430024C561 /* SignInViewController.swift */,
 				1FD2EA4A1E6A5EA1005AB555 /* HomeViewController.swift */,
 				1FD2EA4E1E6A5EBE005AB555 /* MapViewController.swift */,
 				1FD2EA4C1E6A5EB3005AB555 /* CreatiionViewController.swift */,
@@ -159,6 +158,7 @@
 		1FD2EA601E6A624E005AB555 /* finish? */ = {
 			isa = PBXGroup;
 			children = (
+				1FA136721E63A9430024C561 /* SignInViewController.swift */,
 			);
 			name = "finish?";
 			sourceTree = "<group>";

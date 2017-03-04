@@ -18,7 +18,7 @@ class User: NSObject {
     var username: String?
     var about: String?
     var posts: [String]?
-    var points = 1000
+    var points: Int?
     var stamina = 100
     
     static let sharedInstance = User()
@@ -37,7 +37,7 @@ class User: NSObject {
         return result
     }
     
-    func saveToDatabase (completion: @escaping () -> ()) {
+    func saveToDatabase(completion: @escaping () -> ()) {
         let currentUserRef = userRef.child(self.uid!)
         currentUserRef.setValue(self.toDictionary()) { error, ref in
             completion()
@@ -51,19 +51,18 @@ class User: NSObject {
             self.username = snapshotValue["username"] as? String
             self.about = snapshotValue["about"] as? String
             self.posts = snapshotValue["posts"] as? [String]
-            self.points = snapshotValue["points"] as! Int
+            self.points = snapshotValue["points"] as? Int
             
             completion()
         })
     }
     
-    func staminaCounter () {
+    class func staminaCounter() {
         let timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(addStamina), userInfo: nil, repeats: true)
         timer.fire()
-        
     }
     
-    func addStamina () {
+    func addStamina() {
         if stamina < 100 {
             stamina += 1
         } else {
@@ -79,18 +78,27 @@ class User: NSObject {
 //        }
 //    }
     
-    func addPoints (earned: Int) {
-        points += earned
+    func addPoints(earned: Int) {
+        if points != nil {
+            points! += earned
+        } else {
+            points = earned
+        }
+        
         let currentUser = User.sharedInstance
         let currentUserRef = userRef.child(currentUser.uid!)
-        currentUserRef.updateChildValues(["points":self.points])
+        currentUserRef.updateChildValues(["points":self.points!])
     }
     
-    func removePoints (used: Int) {
-        points -= used
+    func removePoints(used: Int) {
+        if points! >= used {
+            points! -= used
+        } else {
+            print("not enough points error")
+        }
         let currentUser = User.sharedInstance
         let currentUserRef = userRef.child(currentUser.uid!)
-        currentUserRef.updateChildValues(["points":self.points])
+        currentUserRef.updateChildValues(["points":self.points!])
     }
     
 }

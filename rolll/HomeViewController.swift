@@ -7,16 +7,45 @@
 //
 
 import UIKit
+import GTProgressBar
 
 class HomeViewController: UIViewController {
 
+    //MARK: - Properties -
+    
+    
+    //MARK: - Views -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        staminaBar()
+        
     }
     
-
+    
+    //MARK: - Buttons -
+    
+    
+    //MARK: - Functions -
+    
+    func staminaBar() {
+        let progressBar = GTProgressBar(frame: CGRect(x: 20, y: 40, width: 200, height: 20))
+        progressBar.progress = 1
+        progressBar.barBorderColor = UIColor(red:0.35, green:0.80, blue:0.36, alpha:1.0)
+        progressBar.barFillColor = UIColor(red:0.35, green:0.80, blue:0.36, alpha:1.0)
+        progressBar.barBackgroundColor = UIColor.white
+        progressBar.barBorderWidth = 1
+        progressBar.barFillInset = 3
+        progressBar.barMaxHeight = 20
+        progressBar.displayLabel = false
+        
+        view.addSubview(progressBar)
+    }
+    
+    func sleep() {
+        User.staminaCounter()
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
