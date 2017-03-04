@@ -9,7 +9,8 @@
 import UIKit
 import Firebase
 
-let loginSegue = "login"
+let loginSegue = "home"
+let newUser = "story"
 
 class SignInViewController: UIViewController {
     
@@ -55,6 +56,9 @@ class SignInViewController: UIViewController {
             if error != nil {
                 print(error)
             }
+            else if self.isFirstLogin == true {
+                self.performSegue(withIdentifier: newUser, sender: nil)
+            }
             else{
                 self.performSegue(withIdentifier: loginSegue, sender: nil)
             }
@@ -83,16 +87,14 @@ class SignInViewController: UIViewController {
     
 
 
-    // MARK: - Navigation
+    //MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == loginSegue && self.isFirstLogin == true {
-            if let tabVC = segue.destination as? UITabBarController {
-                tabVC.selectedIndex = 3
-            }
+        if segue.identifier == loginSegue {
+        }
+        else if segue.identifier == newUser {
         }
     }
-
+//
 
 }
