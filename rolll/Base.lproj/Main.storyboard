@@ -115,12 +115,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fP2-vG-6cZ">
-                                <rect key="frame" x="0.0" y="81" width="375" height="532"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pao-lw-Orv">
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fP2-vG-6cZ">
+                                        <rect key="frame" x="-68" y="-202" width="375" height="532"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pao-lw-Orv" firstAttribute="top" secondItem="5ic-Am-Qnq" secondAttribute="bottom" id="Rb6-hQ-YAd"/>
+                            <constraint firstItem="Pao-lw-Orv" firstAttribute="leading" secondItem="tO6-ev-Ew8" secondAttribute="leading" id="YHB-5a-bB5"/>
+                            <constraint firstAttribute="trailing" secondItem="Pao-lw-Orv" secondAttribute="trailing" id="mOc-vG-Qdg"/>
+                            <constraint firstItem="4df-ol-nr8" firstAttribute="top" secondItem="Pao-lw-Orv" secondAttribute="bottom" id="oEc-PR-WtS"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWK-tV-ter" userLabel="First Responder" sceneMemberID="firstResponder"/>
