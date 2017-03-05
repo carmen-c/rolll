@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     //MARK: - Properties -
 
     var isSleeping = false
-    var stamina = 0.01
+    var stamina:Float = 0.01
     
     //MARK: - Views -
     
@@ -69,10 +69,12 @@ class HomeViewController: UIViewController {
     }
     
     func addStamina() {
-        if stamina < 1 {
-            stamina += 0.01
+        let increment:Float = 0.01
+        
+        if self.stamina < 1 {
+            self.stamina += increment
         } else {
-            stamina += 0
+            self.stamina += 0
         }
     }
 
