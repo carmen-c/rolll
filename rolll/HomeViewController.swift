@@ -13,24 +13,15 @@ class HomeViewController: UIViewController {
 
     //MARK: - Properties -
     
+    let userStamina = User.sharedInstance.stamina
     
     //MARK: - Views -
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        staminaBar()
         
-    }
-    
-    
-    //MARK: - Buttons -
-    
-    
-    //MARK: - Functions -
-    
-    func staminaBar() {
         let progressBar = GTProgressBar(frame: CGRect(x: 20, y: 40, width: 200, height: 20))
-        progressBar.progress = 1
+        progressBar.progress = CGFloat(userStamina)
         progressBar.barBorderColor = UIColor(red:0.35, green:0.80, blue:0.36, alpha:1.0)
         progressBar.barFillColor = UIColor(red:0.35, green:0.80, blue:0.36, alpha:1.0)
         progressBar.barBackgroundColor = UIColor.white
@@ -40,11 +31,24 @@ class HomeViewController: UIViewController {
         progressBar.displayLabel = false
         
         view.addSubview(progressBar)
+        
+//        progressBar.animateTo(progress: userStamina)
+        
     }
     
+    
+    //MARK: - Buttons -
+    
+    
+    //MARK: - Functions -
+    
     func sleep() {
-        User.staminaCounter()
-        
+        if userStamina < 1 {
+           User.staminaCounter()
+        }
+        else {
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {

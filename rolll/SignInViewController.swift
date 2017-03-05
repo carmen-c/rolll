@@ -22,6 +22,7 @@ class SignInViewController: UIViewController {
     var isFirstLogin = false
     var statusAlert: UIAlertController?
     
+    
     //MARK: - View -
 
     override func viewDidLoad() {
@@ -29,9 +30,12 @@ class SignInViewController: UIViewController {
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
                 self.performSegue(withIdentifier: loginSegue, sender: nil)
+            }else{
             }
         }
     }
+    
+    
     
     
     //MARK: - Buttons -
@@ -124,12 +128,6 @@ class SignInViewController: UIViewController {
         errorMsgAlert.addAction(UIAlertAction(title: "Ok", style: .default))
         
         self.present(errorMsgAlert, animated: true, completion: nil)
-    }
-        
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
