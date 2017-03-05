@@ -123,11 +123,19 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gb9-5s-ID4">
-                                        <rect key="frame" x="178" y="235" width="46" height="30"/>
+                                        <rect key="frame" x="184" y="235" width="34" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Door"/>
                                         <connections>
                                             <segue destination="Xul-9m-GmN" kind="presentation" modalTransitionStyle="flipHorizontal" id="zNd-H5-V8A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRI-Uy-kbi">
+                                        <rect key="frame" x="213" y="132" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Bed"/>
+                                        <connections>
+                                            <action selector="bedButton:" destination="RLD-5r-kzI" eventType="touchUpInside" id="foA-JB-JJU"/>
                                         </connections>
                                     </button>
                                 </subviews>

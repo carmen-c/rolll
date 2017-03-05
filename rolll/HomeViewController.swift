@@ -12,8 +12,9 @@ import GTProgressBar
 class HomeViewController: UIViewController {
 
     //MARK: - Properties -
-    
-    let userStamina = User.sharedInstance.stamina
+
+    var isSleeping = false
+    var stamina = 0.01
     
     //MARK: - Views -
     
@@ -21,7 +22,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         let progressBar = GTProgressBar(frame: CGRect(x: 20, y: 40, width: 200, height: 20))
-        progressBar.progress = CGFloat(userStamina)
+        progressBar.progress = CGFloat(stamina)
         progressBar.barBorderColor = UIColor(red:0.35, green:0.80, blue:0.36, alpha:1.0)
         progressBar.barFillColor = UIColor(red:0.35, green:0.80, blue:0.36, alpha:1.0)
         progressBar.barBackgroundColor = UIColor.white
@@ -39,17 +40,42 @@ class HomeViewController: UIViewController {
     
     //MARK: - Buttons -
     
+    @IBAction func bedButton(_ sender: Any) {
+        
+        if isSleeping == false {
+            isSleeping = true
+            
+            print(isSleeping)
+            
+        }else if isSleeping == true{
+            isSleeping = false
+            
+            print(isSleeping)
+        }
+        sleep()
+        
+    }
     
     //MARK: - Functions -
     
     func sleep() {
-        if userStamina < 1 {
-           User.staminaCounter()
-        }
-        else {
-            
+        let timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(addStamina), userInfo: nil, repeats: true)
+        
+        if isSleeping == true {
+            timer.fire()
+        }else {
+            timer.invalidate()
         }
     }
+    
+    func addStamina() {
+        if stamina < 1 {
+            stamina += 0.01
+        } else {
+            stamina += 0
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -19,7 +19,6 @@ class User: NSObject {
     var about: String?
     var posts: [String]?
     var points: Int?
-    var stamina = 0.01
     
     static let sharedInstance = User()
     
@@ -57,19 +56,7 @@ class User: NSObject {
         })
     }
     
-    class func staminaCounter() {
-        let timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(addStamina), userInfo: nil, repeats: true)
-        timer.fire()
-    }
-    
-    func addStamina() {
-        if stamina < 1 {
-            stamina += 0.01
-        } else {
-            stamina += 0
-        }
-    }
-    
+        
 //    func removeStamina() {
 //        if stamina < 10 {
 //            print("dont have enuff")
