@@ -45,15 +45,11 @@ class HomeViewController: UIViewController {
         if isSleeping == false {
             isSleeping = true
             
-            print(isSleeping)
-            
         }else if isSleeping == true{
             isSleeping = false
-            
-            print(isSleeping)
         }
-        sleep()
         
+        sleep()
     }
     
     //MARK: - Functions -
