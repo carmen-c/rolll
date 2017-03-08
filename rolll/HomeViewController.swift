@@ -40,8 +40,7 @@ class HomeViewController: UIViewController {
     
     //MARK: - Buttons -
     
-    @IBAction func bedButton(_ sender: Any) {
-        
+    @IBAction func bed(_ sender: Any) {
         if isSleeping == false {
             isSleeping = true
             
@@ -50,7 +49,17 @@ class HomeViewController: UIViewController {
         }
         
         sleep()
+        print("bed button pressed")
     }
+
+    @IBAction func laptop(_ sender: Any) {
+        print("laptop button pressed")
+    }
+    
+    @IBAction func door(_ sender: Any) {
+        print("door button pressed")
+    }
+    
     
     //MARK: - Functions -
     
