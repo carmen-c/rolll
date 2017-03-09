@@ -13,13 +13,17 @@ import CoreMotion
 class GameScene: SKScene {
     
     //MARK: - Properties -
-    var player = SKSpriteNode()
+//    var player = SKSpriteNode()
     var motionManager = CMMotionManager()
     var lastTouchPosition: CGPoint?
     
     
     //MARK: - Overrides -
     override func didMove(to view: SKView) {
+        
+        let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+        borderBody.friction = 0
+        self.physicsBody = borderBody
         
         motionManager.startAccelerometerUpdates()
         
@@ -28,7 +32,6 @@ class GameScene: SKScene {
         }
         
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
-        
         
     }
     
@@ -55,6 +58,9 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
+        let player = childNode(withName: "player") as! SKSpriteNode
+        
         #if (arch(i386) || arch(x86_64))
             if let currentTouch = lastTouchPosition {
                 let diff = CGPoint(x: currentTouch.x - player.position.x, y: currentTouch.y - player.position.y)
@@ -66,18 +72,6 @@ class GameScene: SKScene {
         }
         #endif
     }
-    
-    
-    //MARK: - Functions -
-    func createPlayer() {
-        player = SKSpriteNode(imageNamed: "player")
-        player.position = CGPoint(x: 0, y: 0)
-        player.physicsBody = SKPhysicsBody(circleOfRadius: player.size.width/2)
-        player.physicsBody!.linearDamping = 0.5
-        addChild(player)
-    }
-    
-    
     
     
 }
