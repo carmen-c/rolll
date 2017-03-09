@@ -13,17 +13,18 @@ import CoreMotion
 class GameScene: SKScene {
     
     //MARK: - Properties -
-//    var player = SKSpriteNode()
     var motionManager = CMMotionManager()
     var lastTouchPosition: CGPoint?
     
     
-    //MARK: - Overrides -
+    
+    
+    //MARK: - MoveTo -
     override func didMove(to view: SKView) {
         
-        let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-        borderBody.friction = 0
-        self.physicsBody = borderBody
+//        let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
+//        borderBody.friction = 0
+//        self.physicsBody = borderBody
         
         motionManager.startAccelerometerUpdates()
         
@@ -34,6 +35,11 @@ class GameScene: SKScene {
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         
     }
+    
+    
+    
+    
+    //MARK: - Touches -
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
@@ -57,6 +63,11 @@ class GameScene: SKScene {
         lastTouchPosition = nil
     }
     
+    
+    
+    
+    //MARK: - Accelerometer -
+    
     override func update(_ currentTime: TimeInterval) {
         
         let player = childNode(withName: "player") as! SKSpriteNode
@@ -71,6 +82,11 @@ class GameScene: SKScene {
                 physicsWorld.gravity = CGVector(dx: accelData.acceleration.y * -50, dy: accelData.acceleration.x * 50)
         }
         #endif
+        
+        if (!intersects(player)) {
+            print("node is not in the scene")
+        }
+
     }
     
     
