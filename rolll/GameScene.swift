@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 import CoreMotion
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //MARK: - Properties -
     var motionManager = CMMotionManager()
@@ -33,10 +33,104 @@ class GameScene: SKScene {
         }
         
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        self.physicsWorld.contactDelegate = self
+        createEnemies()
         
     }
     
     
+    
+    
+    //MARK: - Enemies -
+    
+    func randomBetweenNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat{
+        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
+    }
+    
+    func randomPointBetween(start:CGPoint, end:CGPoint)->CGPoint{
+        
+        return CGPoint(x: randomBetweenNumbers(firstNum: start.x, secondNum: end.x), y: randomBetweenNumbers(firstNum: start.y, secondNum: end.y))
+        
+    }
+    
+    func createEnemies(){
+        
+        //Randomize spawning time.
+        let wait = SKAction.wait(forDuration: 0.5, withRange: 0.2)
+        
+        weak var weakSelf = self //Use weakSelf to break a possible strong reference cycle
+        
+        let spawn = SKAction.run({
+            
+            let random = arc4random() % 4 + 1
+            var position = CGPoint()
+            var moveTo = CGPoint()
+//            var offset:CGFloat = 40
+            
+            switch random {
+                
+            //Top
+            case 1:
+                position = weakSelf!.randomPointBetween(start: CGPoint(x: 0, y: weakSelf!.frame.size.height), end: CGPoint(x: weakSelf!.frame.size.width, y: weakSelf!.frame.size.height))
+
+                moveTo = weakSelf!.randomPointBetween(start: CGPoint(x: 0, y: 0), end: CGPoint(x:weakSelf!.frame.size.width, y:0))
+                break
+                
+            //Bottom
+            case 2:
+                position = weakSelf!.randomPointBetween(start: CGPoint(x: 0, y: 0), end: CGPoint(x: weakSelf!.frame.size.width, y: 0))
+                
+                moveTo = weakSelf!.randomPointBetween(start: CGPoint(x: 0, y: weakSelf!.frame.size.height), end: CGPoint(x: weakSelf!.frame.size.width, y: weakSelf!.frame.size.height))
+                break
+                
+            //Left
+            case 3:
+                position = weakSelf!.randomPointBetween(start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: weakSelf!.frame.size.height))
+                
+                moveTo = weakSelf!.randomPointBetween(start: CGPoint(x: weakSelf!.frame.size.width, y: 0), end: CGPoint(x: weakSelf!.frame.size.width, y: weakSelf!.frame.size.height))
+                break
+                
+            //Right
+            case 4:
+                position = weakSelf!.randomPointBetween(start: CGPoint(x: weakSelf!.frame.size.width, y: 0), end: CGPoint(x: weakSelf!.frame.size.width, y: weakSelf!.frame.size.height))
+                
+                moveTo = weakSelf!.randomPointBetween(start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: weakSelf!.frame.size.height))
+                break
+                
+            default:
+                break
+                
+            }
+
+            weakSelf!.spawnEnemyAtPosition(position: position, moveTo: moveTo)
+            
+        })
+        
+        let spawning = SKAction.sequence([wait,spawn])
+        self.run(SKAction.repeatForever(spawning), withKey:"spawning")
+    
+    }
+    
+    func spawnEnemyAtPosition(position:CGPoint, moveTo:CGPoint){
+        
+        let enemy = SKSpriteNode(color: SKColor.brown, size: CGSize(width: 40, height: 40))
+        
+        enemy.position = position
+        enemy.physicsBody = SKPhysicsBody(rectangleOf: enemy.size)
+        enemy.physicsBody?.affectedByGravity = false
+        enemy.physicsBody?.isDynamic = true
+        enemy.physicsBody?.collisionBitMask = 0
+        
+        //Here you can randomize the value of duration parameter to change the speed of a node
+        let move = SKAction.move(to: moveTo,duration: 2.5)
+        let remove = SKAction.removeFromParent()
+        enemy.run(SKAction.sequence([move, remove]))
+        
+        self.addChild(enemy)
+        
+    }
+    
+
     
     
     //MARK: - Touches -
@@ -84,7 +178,11 @@ class GameScene: SKScene {
         #endif
         
         if (!intersects(player)) {
-            print("node is not in the scene")
+            print("node is not in the scene, GAMEOVER")
+            
+            if(self.action(forKey: "spawning") != nil){
+                self.removeAction(forKey: "spawning")
+            }
         }
 
     }
