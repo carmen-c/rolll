@@ -9,6 +9,9 @@
 import Foundation
 import SpriteKit
 import CoreMotion
+import GameplayKit
+
+
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -18,8 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    
-    //MARK: - MoveTo -
+    //MARK: - Game -
     override func didMove(to view: SKView) {
         
 //        let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
@@ -38,6 +40,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func gameOver() {
+        
+    }
     
     
     
@@ -65,7 +70,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let random = arc4random() % 4 + 1
             var position = CGPoint()
             var moveTo = CGPoint()
-//            var offset:CGFloat = 40
             
             switch random {
                 
@@ -178,7 +182,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         #endif
         
         if (!intersects(player)) {
-            print("node is not in the scene, GAMEOVER")
+            print("player is not in the scene, GAMEOVER")
             
             if(self.action(forKey: "spawning") != nil){
                 self.removeAction(forKey: "spawning")
