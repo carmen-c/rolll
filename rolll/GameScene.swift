@@ -18,17 +18,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: - Properties -
     var motionManager = CMMotionManager()
     var lastTouchPosition: CGPoint?
-    
-    
+    var score = 0
+    let scoreLabel = SKLabelNode()
+    var isPlaying = true
     
     //MARK: - Game -
     override func didMove(to view: SKView) {
-        
-//        let borderBody = SKPhysicsBody(edgeLoopFrom: self.frame)
-//        borderBody.friction = 0
-//        self.physicsBody = borderBody
-        
-        motionManager.startAccelerometerUpdates()
         
         if let accelData = motionManager.accelerometerData {
             physicsWorld.gravity = CGVector(dx: accelData.acceleration.y * -50, dy: accelData.acceleration.x * 50)
@@ -36,14 +31,46 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         self.physicsWorld.contactDelegate = self
-        createEnemies()
         
+        scoreLabel.text = String(score)
+        scoreLabel.fontSize = 45
+        scoreLabel.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
+        self.addChild(scoreLabel)
+        
+        motionManager.startAccelerometerUpdates()
+        createEnemies()
+        keepScore()
+
+    }
+    
+    func keepScore() {
+        let wait = SKAction.wait(forDuration: 1)
+        let block = SKAction.run({
+            [unowned self] in
+            
+            if self.isPlaying == true{
+                self.score += 1
+                self.scoreLabel.text = String(self.score)
+                
+            }else if self.isPlaying == false{
+                self.removeAction(forKey: "count")
+            }
+        })
+        let sequence = SKAction.sequence([wait,block])
+        
+        run(SKAction.repeatForever(sequence), withKey: "count")
     }
     
     func gameOver() {
-        
+        isPlaying = false
+        if action(forKey: "count") != nil {removeAction(forKey: "countdown")}
+        if action(forKey: "spawning") != nil {removeAction(forKey: "spawning")}
     }
     
+    func counter() {
+        score += 1
+        scoreLabel.text = String(score)
+    }
     
     
     //MARK: - Enemies -
@@ -184,9 +211,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (!intersects(player)) {
             print("player is not in the scene, GAMEOVER")
             
-            if(self.action(forKey: "spawning") != nil){
-                self.removeAction(forKey: "spawning")
-            }
+            gameOver()
         }
 
     }
