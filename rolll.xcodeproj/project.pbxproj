@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1F6CFB9F1E6FC3A30007F28A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFB9E1E6FC3A30007F28A /* GameScene.swift */; };
 		1F6CFBA11E6FCC8E0007F28A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFBA01E6FCC8E0007F28A /* GameViewController.swift */; };
-		1F6FD5771E67A60100B98A04 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD5761E67A60100B98A04 /* ProfileViewController.swift */; };
 		1F6FD5791E67A7A300B98A04 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD5781E67A7A300B98A04 /* Authenticate.swift */; };
 		1F6FD57B1E67AC9300B98A04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD57A1E67AC9300B98A04 /* User.swift */; };
 		1F7A9AFD1E6FB8CB007C64EB /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A9AFC1E6FB8CB007C64EB /* Game.storyboard */; };
@@ -28,7 +27,6 @@
 		04B6AA718E4B76882DDD0DF0 /* Pods_rolll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rolll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6CFB9E1E6FC3A30007F28A /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		1F6CFBA01E6FCC8E0007F28A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		1F6FD5761E67A60100B98A04 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F6FD5781E67A7A300B98A04 /* Authenticate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
 		1F6FD57A1E67AC9300B98A04 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1F7A9AFC1E6FB8CB007C64EB /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
@@ -134,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				1FD2EA4A1E6A5EA1005AB555 /* HomeViewController.swift */,
-				1F6FD5761E67A60100B98A04 /* ProfileViewController.swift */,
-				1F6CFBA01E6FCC8E0007F28A /* GameViewController.swift */,
 			);
 			name = todo;
 			sourceTree = "<group>";
@@ -144,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				1FA136721E63A9430024C561 /* SignInViewController.swift */,
+				1F6CFBA01E6FCC8E0007F28A /* GameViewController.swift */,
 			);
 			name = "finish?";
 			sourceTree = "<group>";
@@ -298,7 +295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F6FD5791E67A7A300B98A04 /* Authenticate.swift in Sources */,
-				1F6FD5771E67A60100B98A04 /* ProfileViewController.swift in Sources */,
 				1FA1365F1E63A4240024C561 /* AppDelegate.swift in Sources */,
 				1F6FD57B1E67AC9300B98A04 /* User.swift in Sources */,
 				1F6CFBA11E6FCC8E0007F28A /* GameViewController.swift in Sources */,
