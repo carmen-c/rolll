@@ -20,6 +20,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastTouchPosition: CGPoint?
     var score = 0
     let scoreLabel = SKLabelNode()
+    let restart = SKLabelNode()
+    let back = SKLabelNode()
     var isPlaying = true
     
     //MARK: - Game -
@@ -36,6 +38,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.fontSize = 45
         scoreLabel.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
         self.addChild(scoreLabel)
+        
+        
+        restart.text = "restart"
+        restart.fontSize = 35
+        restart.position = CGPoint(x: self.frame.midX, y: (self.scoreLabel.position.y - 100))
+        restart.isHidden = true
+        self.addChild(restart)
+        
+        back.text = "go back"
+        back.fontSize = 35
+        back.position = CGPoint(x: self.frame.midX, y: (self.restart.position.y - 50))
+        back.isHidden = true
+        self.addChild(back)
+        
+        if isPlaying == true {
+            restart.isUserInteractionEnabled = false
+            back.isUserInteractionEnabled = false
+        }else {
+            restart.isUserInteractionEnabled = true
+            back.isUserInteractionEnabled = true
+        }
+
         
         motionManager.startAccelerometerUpdates()
         createEnemies()
@@ -62,7 +86,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func gameOver() {
+        let player = childNode(withName: "player") as! SKSpriteNode
+        
         isPlaying = false
+        player.isHidden = true
+        restart.isHidden = false
+        back.isHidden = false
         if action(forKey: "count") != nil {removeAction(forKey: "countdown")}
         if action(forKey: "spawning") != nil {removeAction(forKey: "spawning")}
     }
@@ -182,6 +211,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         lastTouchPosition = nil
+        for touch: AnyObject in touches {
+            // Get the location of the touch in this scene
+            let location = touch.location(in: self)
+            // Check if the location of the touch is within the button's bounds
+            if restart.contains(location) {
+                print("tapped!")
+            }
+            else if back.contains(location){
+                print("back")
+            }
+        }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -209,8 +249,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         #endif
         
         if (!intersects(player)) {
-            print("player is not in the scene, GAMEOVER")
-            
             gameOver()
         }
 
