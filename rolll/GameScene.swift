@@ -101,6 +101,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.text = String(score)
     }
     
+    func newGame(){
+        let newScene = GameScene(fileNamed: "MyScene")
+        let transition = SKTransition.fade(withDuration: 1.0)
+        newScene?.scaleMode = SKSceneScaleMode.fill
+        self.view!.presentScene(newScene!, transition: transition)
+    }
     
     //MARK: - Enemies -
     
@@ -211,15 +217,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         lastTouchPosition = nil
-        for touch: AnyObject in touches {
-            // Get the location of the touch in this scene
-            let location = touch.location(in: self)
-            // Check if the location of the touch is within the button's bounds
-            if restart.contains(location) {
-                print("tapped!")
-            }
-            else if back.contains(location){
-                print("back")
+        if isPlaying == false {
+            for touch: AnyObject in touches {
+                let location = touch.location(in: self)
+                if restart.contains(location) {
+                    newGame()
+                }
+                else if back.contains(location){
+                    print("back")
+                }
             }
         }
     }
