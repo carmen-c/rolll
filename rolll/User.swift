@@ -15,9 +15,7 @@ class User: NSObject {
     
     var uid: String?
     var email: String?
-    var username: String?
-    var about: String?
-    var posts: [String]?
+    var items: [String]?
     var points: Int?
     
     static let sharedInstance = User()
@@ -28,9 +26,7 @@ class User: NSObject {
         var result : [String:Any?] = [:]
         result["uid"] = uid
         result["email"] = email
-        result["username"] = username
-        result["about"] = about
-        result["posts"] = posts
+        result["items"] = items
         result["points"] = points
         
         return result
@@ -47,23 +43,13 @@ class User: NSObject {
         userRef.child(self.uid!).observe(.value, with: { snapshot in
             
             let snapshotValue = snapshot.value as! [String: Any?]
-            self.username = snapshotValue["username"] as? String
-            self.about = snapshotValue["about"] as? String
-            self.posts = snapshotValue["posts"] as? [String]
+            self.items = snapshotValue["items"] as? [String]
             self.points = snapshotValue["points"] as? Int
             
             completion()
         })
     }
     
-        
-//    func removeStamina() {
-//        if stamina < 10 {
-//            print("dont have enuff")
-//        } else {
-//            stamina -= 10
-//        }
-//    }
     
     func addPoints(earned: Int) {
         if points != nil {

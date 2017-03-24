@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
     //MARK: - Properties -
 
+    @IBOutlet weak var inventory: UICollectionView!
+    @IBOutlet weak var itemCell: UICollectionViewCell!
+    
     
     //MARK: - Views -
     
@@ -24,6 +28,14 @@ class HomeViewController: UIViewController {
     
     //MARK: - Buttons -
     
+    @IBAction func signOutButton(_ sender: Any) {
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
     
     
     
