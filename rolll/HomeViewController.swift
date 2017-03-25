@@ -9,12 +9,15 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController {
+let itemReuseIdentifier = "item"
+
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     //MARK: - Properties -
 
     @IBOutlet weak var inventory: UICollectionView!
     @IBOutlet weak var itemCell: UICollectionViewCell!
+    var itemsOwned: [] = []
     
     
     //MARK: - Views -
@@ -47,7 +50,24 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    //MARK: - Collection View -
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return itemsOwned.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: itemReuseIdentifier, for: indexPath) as! ItemCollectionViewCell
+        return cell
+    }
+    
+    func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth: CGFloat = 300.0
+        let cellHeight: CGFloat = 300.0
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
     /*
     // MARK: - Navigation
 

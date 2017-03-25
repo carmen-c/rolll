@@ -175,13 +175,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="item" id="cZb-5c-s4y">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="item" id="cZb-5c-s4y" customClass="ItemCollectionViewCell" customModule="rolll" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DtA-hu-VbY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="DtA-hu-VbY" secondAttribute="trailing" id="L17-6T-XY3"/>
+                                            <constraint firstItem="DtA-hu-VbY" firstAttribute="top" secondItem="cZb-5c-s4y" secondAttribute="top" id="rPY-0N-boU"/>
+                                            <constraint firstItem="DtA-hu-VbY" firstAttribute="leading" secondItem="cZb-5c-s4y" secondAttribute="leading" id="rgd-5Y-O3C"/>
+                                            <constraint firstAttribute="bottom" secondItem="DtA-hu-VbY" secondAttribute="bottom" id="x6l-nF-qcc"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="itemImage" destination="DtA-hu-VbY" id="N0j-H6-FpE"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
