@@ -220,7 +220,6 @@
                     </view>
                     <connections>
                         <outlet property="inventory" destination="cWh-yr-UNS" id="4kX-H0-va0"/>
-                        <outlet property="itemCell" destination="cZb-5c-s4y" id="UN5-Up-Y4S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWK-tV-ter" userLabel="First Responder" sceneMemberID="firstResponder"/>

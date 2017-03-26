@@ -16,9 +16,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - Properties -
 
     @IBOutlet weak var inventory: UICollectionView!
-    @IBOutlet weak var itemCell: UICollectionViewCell!
-    var itemsOwned: [] = []
-    
+    let itemsOwned: [String] = []
     
     //MARK: - Views -
     

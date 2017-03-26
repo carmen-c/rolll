@@ -6,17 +6,25 @@
 //  Copyright © 2017 carmen cheng. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Firebase
 
-let storage = FIRStorage.storage()
-let storageRef = storage.reference()
 
 class InventoryManager: NSObject {
     
-    class func getItemImage(item: , completion: @escaping (_ image: UIIMage) -> ()) {
-        var fetchedImage = UIImage()
-        let imageRef = storageRef.child("images")
+    class func getItemImage(item: String, completion: @escaping (_ image: UIImage) -> ()) {
+        
+        let itemRef = "gacha1/\(item)"
+        let reference = FIRStorage.storage().reference(withPath: itemRef)
+
+        reference.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+            if (error != nil) {
+                print(error)
+            } else {
+                let image = UIImage(data: data!)
+                completion(image!)
+            }
+        }
         
     }
 }
