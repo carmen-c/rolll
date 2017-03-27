@@ -14,6 +14,7 @@ class ItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var itemImage: UIImageView!
     
+    
     //MARK: - Functions -
     
 }

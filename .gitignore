@@ -2,3 +2,5 @@ Pods/
 Podfile.lock
 rolll/GoogleService-Info.plist
 rolll/rolll.entitlements
+rolll/Constants.swift
+rolll/itemDatabase.swift
