@@ -16,7 +16,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var shopCollectionView: UICollectionView!
     
-    var itemImageArray:[UIImage] = []
+    var itemImagesArray:[UIImage] = []
     
     //MARK: - View -
     
@@ -34,13 +34,10 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //MARK: - Functions -
     
     func getItems() {
-        for item in allItems {
-            InventoryManager.getItemImage(item: item)
-            { image in
-                self.itemImageArray.append(image)
-            }
+        InventoryManager.getItemImage(items: allItems) { imagesArray in
+            self.itemImagesArray = imagesArray
+            print(self.itemImagesArray.count)
         }
-        print(itemImageArray.count)
         self.shopCollectionView.reloadData()
     }
     
@@ -52,12 +49,12 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemImageArray.count
+        return itemImagesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shopItem", for: indexPath) as! ShopCollectionViewCell
-        cell.shopItemImage.image = self.itemImageArray[indexPath.row]
+        cell.shopItemImage.image = self.itemImagesArray[indexPath.row]
         return cell
     }
     
