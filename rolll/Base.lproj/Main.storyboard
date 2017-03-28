@@ -103,70 +103,6 @@
             </objects>
             <point key="canvasLocation" x="125.59999999999999" y="364.7676161919041"/>
         </scene>
-        <!--Shop View Controller-->
-        <scene sceneID="ckn-z8-eUm">
-            <objects>
-                <viewController id="E6U-pa-OHP" customClass="ShopViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QhW-Cf-875"/>
-                        <viewControllerLayoutGuide type="bottom" id="G2U-eN-ObH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2tu-7z-LlG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jVt-kC-tbU">
-                                <rect key="frame" x="0.0" y="28" width="375" height="579"/>
-                                <color key="backgroundColor" red="0.85490196080000003" green="0.78823529410000004" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O8d-fO-xVq">
-                                    <size key="itemSize" width="100" height="100"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopItem" id="aea-Cx-Ys0" customClass="ShopCollectionViewCell" customModule="rolll" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p4f-ly-FiE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" red="0.50980392159999999" green="0.67843137249999996" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="p4f-ly-FiE" firstAttribute="leading" secondItem="aea-Cx-Ys0" secondAttribute="leading" id="S81-qw-fY5"/>
-                                            <constraint firstAttribute="trailing" secondItem="p4f-ly-FiE" secondAttribute="trailing" id="Ti8-5x-ND6"/>
-                                            <constraint firstItem="p4f-ly-FiE" firstAttribute="top" secondItem="aea-Cx-Ys0" secondAttribute="top" id="e1n-eL-Rze"/>
-                                            <constraint firstAttribute="bottom" secondItem="p4f-ly-FiE" secondAttribute="bottom" id="smJ-3K-DiF"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="shopItemImage" destination="p4f-ly-FiE" id="aWY-tr-r1E"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jVt-kC-tbU" firstAttribute="leading" secondItem="2tu-7z-LlG" secondAttribute="leading" id="dT6-PF-l4f"/>
-                            <constraint firstItem="G2U-eN-ObH" firstAttribute="top" secondItem="jVt-kC-tbU" secondAttribute="bottom" constant="60" id="eHj-vG-tn4"/>
-                            <constraint firstAttribute="trailing" secondItem="jVt-kC-tbU" secondAttribute="trailing" id="gvk-wQ-6FJ"/>
-                            <constraint firstItem="jVt-kC-tbU" firstAttribute="top" secondItem="QhW-Cf-875" secondAttribute="bottom" constant="8" id="uu4-Gq-Tgi"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="shopCollectionView" destination="jVt-kC-tbU" id="tzf-xD-1z9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e9t-uY-Yae" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="940" y="1444"/>
-        </scene>
         <!--Home View Controller-->
         <scene sceneID="vah-sl-KiK">
             <objects>
@@ -217,7 +153,7 @@
                                             <constraint firstAttribute="bottom" secondItem="DtA-hu-VbY" secondAttribute="bottom" id="x6l-nF-qcc"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="itemImage" destination="DtA-hu-VbY" id="N0j-H6-FpE"/>
+                                            <outlet property="cellImage" destination="DtA-hu-VbY" id="bpV-9p-K4v"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -235,7 +171,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="shop"/>
                                 <connections>
-                                    <segue destination="E6U-pa-OHP" kind="show" id="3c8-Qn-yIr"/>
+                                    <segue destination="bdO-n4-P0F" kind="show" id="ZZh-MR-6Ll"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -248,6 +184,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWK-tV-ter" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940" y="640.92953523238384"/>
+        </scene>
+        <!--Shop Collection View Controller-->
+        <scene sceneID="02j-kS-rZ3">
+            <objects>
+                <collectionViewController id="bdO-n4-P0F" customClass="ShopCollectionViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="KI7-eK-Deu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bFB-HA-UXb">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shopItem" id="HVq-I4-dC8" customClass="ShopCollectionViewCell" customModule="rolll" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cHb-JI-fWL">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="cHb-JI-fWL" firstAttribute="top" secondItem="HVq-I4-dC8" secondAttribute="top" id="Mqi-Mq-4GF"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHb-JI-fWL" secondAttribute="trailing" id="gJ1-Zs-4O8"/>
+                                    <constraint firstAttribute="bottom" secondItem="cHb-JI-fWL" secondAttribute="bottom" id="slj-yW-59I"/>
+                                    <constraint firstItem="cHb-JI-fWL" firstAttribute="leading" secondItem="HVq-I4-dC8" secondAttribute="leading" id="uxp-Y7-Gox"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="shopItemImage" destination="cHb-JI-fWL" id="pH6-CQ-Znx"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="bdO-n4-P0F" id="rJn-Jv-QiA"/>
+                            <outlet property="delegate" destination="bdO-n4-P0F" id="lLS-lz-vq5"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="plO-zD-6n4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="1421"/>
         </scene>
         <!--Game-->
         <scene sceneID="iZh-a8-W43">

@@ -11,4 +11,11 @@ import UIKit
 class ShopCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var shopItemImage: UIImageView!
+
+    
+    func setup(itemImage: String) {
+        InventoryManager.getItemImage(item: itemImage) { newImage in
+            self.shopItemImage.image = newImage
+        }
+    }
 }
