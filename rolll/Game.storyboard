@@ -12,7 +12,7 @@
         <!--Game View Controller-->
         <scene sceneID="dNa-xP-VqZ">
             <objects>
-                <viewController id="jLE-NV-6oZ" customClass="GameViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jLE-NV-6oZ" customClass="GameViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1NX-Yy-cof"/>
                         <viewControllerLayoutGuide type="bottom" id="1FT-UP-DQj"/>

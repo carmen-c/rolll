@@ -12,7 +12,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="SignInViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -106,7 +106,7 @@
         <!--Home View Controller-->
         <scene sceneID="vah-sl-KiK">
             <objects>
-                <viewController id="RLD-5r-kzI" customClass="HomeViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RLD-5r-kzI" customClass="HomeViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5ic-Am-Qnq"/>
                         <viewControllerLayoutGuide type="bottom" id="4df-ol-nr8"/>
@@ -182,7 +182,7 @@
         <!--Shop Collection View Controller-->
         <scene sceneID="02j-kS-rZ3">
             <objects>
-                <collectionViewController id="bdO-n4-P0F" customClass="ShopCollectionViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ShopCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bdO-n4-P0F" customClass="ShopCollectionViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="KI7-eK-Deu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,7 @@
         <!--Story View Controller-->
         <scene sceneID="jH7-GJ-MIK">
             <objects>
-                <viewController id="nLP-ph-kZ4" customClass="StoryViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nLP-ph-kZ4" customClass="StoryViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Ai-qb-vQK"/>
                         <viewControllerLayoutGuide type="bottom" id="JsV-f2-q8c"/>

@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let firebaseAuth = FIRAuth.auth()
         do {
             try firebaseAuth?.signOut()
+            Router(self).showSignIn()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
