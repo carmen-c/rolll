@@ -15,6 +15,7 @@
 		1F7A9AFF1E6FBA61007C64EB /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1F7A9AFE1E6FBA61007C64EB /* MyScene.sks */; };
 		1F9293901E8B00AC00AC114C /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F92938F1E8B00AC00AC114C /* ItemCollectionViewCell.swift */; };
 		1F9293921E8B029E00AC114C /* ShopCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9293911E8B029E00AC114C /* ShopCollectionViewController.swift */; };
+		1F9293941E8B168900AC114C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9293931E8B168900AC114C /* Router.swift */; };
 		1F9BED361E863BE700D38958 /* InventoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BED351E863BE700D38958 /* InventoryManager.swift */; };
 		1F9BED3C1E89978000D38958 /* itemDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BED3B1E89978000D38958 /* itemDatabase.swift */; };
 		1F9BED3F1E89A3AE00D38958 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BED3E1E89A3AE00D38958 /* Constants.swift */; };
@@ -39,6 +40,7 @@
 		1F7A9AFE1E6FBA61007C64EB /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
 		1F92938F1E8B00AC00AC114C /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F9293911E8B029E00AC114C /* ShopCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewController.swift; sourceTree = "<group>"; };
+		1F9293931E8B168900AC114C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1F9BED351E863BE700D38958 /* InventoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryManager.swift; sourceTree = "<group>"; };
 		1F9BED3B1E89978000D38958 /* itemDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemDatabase.swift; sourceTree = "<group>"; };
 		1F9BED3E1E89A3AE00D38958 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				1FA1365E1E63A4240024C561 /* AppDelegate.swift */,
 				1F6FD5781E67A7A300B98A04 /* Authenticate.swift */,
 				1F6FD57A1E67AC9300B98A04 /* User.swift */,
+				1F9293931E8B168900AC114C /* Router.swift */,
 				1F9BED351E863BE700D38958 /* InventoryManager.swift */,
 			);
 			name = Model;
@@ -330,6 +333,7 @@
 				1F6CFB9F1E6FC3A30007F28A /* GameScene.swift in Sources */,
 				1F9293921E8B029E00AC114C /* ShopCollectionViewController.swift in Sources */,
 				1F9BED411E89B44E00D38958 /* ShopCollectionViewCell.swift in Sources */,
+				1F9293941E8B168900AC114C /* Router.swift in Sources */,
 				1FD2EA4B1E6A5EA1005AB555 /* HomeViewController.swift in Sources */,
 				1F9BED3F1E89A3AE00D38958 /* Constants.swift in Sources */,
 				1F9293901E8B00AC00AC114C /* ItemCollectionViewCell.swift in Sources */,

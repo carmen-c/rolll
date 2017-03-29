@@ -119,9 +119,6 @@
                                 <rect key="frame" x="170" y="61" width="33" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="play!"/>
-                                <connections>
-                                    <segue destination="vTt-tv-aGE" kind="show" id="srC-dZ-MhL"/>
-                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cWh-yr-UNS">
                                 <rect key="frame" x="0.0" y="218" width="375" height="449"/>
@@ -170,9 +167,6 @@
                                 <rect key="frame" x="169" y="114" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="shop"/>
-                                <connections>
-                                    <segue destination="bdO-n4-P0F" kind="show" id="ZZh-MR-6Ll"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -265,9 +259,6 @@
                                 <rect key="frame" x="172" y="604" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ok"/>
-                                <connections>
-                                    <segue destination="RLD-5r-kzI" kind="show" id="l4m-zA-A0t"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -278,7 +269,4 @@
             <point key="canvasLocation" x="940" y="-121.88905547226388"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="l4m-zA-A0t"/>
-    </inferredMetricsTieBreakers>
 </document>

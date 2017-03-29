@@ -48,18 +48,31 @@ class ShopCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ShopCollectionViewCell
         cell.setup(itemImage: allItems[indexPath.row])
-        cell.backgroundColor = UIColor.blue
         return cell
     }
 
-    // MARK: - UICollectionViewDelegate -
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedCell = self.collectionView?.cellForItem(at: indexPath) as! ShopCollectionViewCell
+        let selectedItem = selectedCell.itemName
+        
+        let shopAlert = UIAlertController(title: "1000 points", message: "buy this?", preferredStyle: .alert)
+        
+        shopAlert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action) -> Void in
+            
+            if User.sharedInstance.points! >= 1000 {
+            User.sharedInstance.removePoints(used: 1000)
+                // add to inventory
+            User.sharedInstance.items?.append(selectedItem)
+            
+            } else {
+                print("dont have enough points")
+            }
+        }))
+        shopAlert.addAction(UIAlertAction(title: "cancel", style: .default))
     }
-    */
+    
+    // MARK: - UICollectionViewDelegate -
 
     /*
     // Uncomment this method to specify if the specified item should be selected
@@ -68,19 +81,5 @@ class ShopCollectionViewController: UICollectionViewController {
     }
     */
 
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
 
 }

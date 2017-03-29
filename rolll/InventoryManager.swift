@@ -24,12 +24,8 @@ class InventoryManager: NSObject {
             if (error != nil) {
                 print(error?.localizedDescription ?? "error")
             } else {
-                if data != nil {
-                    image = UIImage(data: data!)!
-                    completion(image)
-                } else {
-                    print ("data is nil")
-                }
+                image = UIImage(data: data!)!
+                completion(image)
             }
         }
     }

@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-let itemReuseIdentifier = "item"
+private let itemReuseIdentifier = "item"
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -38,6 +38,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+        
     }
     
     

@@ -11,5 +11,12 @@ import UIKit
 class ItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!
+    var itemName = ""
     
+    func setup(itemImage: String) {
+        InventoryManager.getItemImage(item: itemImage) { newImage in
+            self.cellImage.image = newImage
+            self.itemName = itemImage
+        }
+    }
 }
