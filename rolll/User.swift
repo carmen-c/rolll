@@ -50,6 +50,13 @@ class User: NSObject {
         })
     }
     
+    func addItem(item: String) {
+        self.items?.append(item)
+        let currentUser = User.sharedInstance
+        let currentUserRef = userRef.child(currentUser.uid!)
+        currentUserRef.updateChildValues(["items":self.items!])
+    }
+    
     
     func addPoints(earned: Int) {
         if points != nil {
@@ -57,7 +64,6 @@ class User: NSObject {
         } else {
             points = earned
         }
-        
         let currentUser = User.sharedInstance
         let currentUserRef = userRef.child(currentUser.uid!)
         currentUserRef.updateChildValues(["points":self.points!])

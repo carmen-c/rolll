@@ -42,7 +42,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
+    @IBAction func shopButton(_ sender: Any) {
+        Router(self).showShop()
+    }
     
+    @IBAction func playButton(_ sender: Any) {
+        Router(self).showGame()
+    }
     
     //MARK: - Functions -
 

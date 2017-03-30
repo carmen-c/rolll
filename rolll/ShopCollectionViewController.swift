@@ -55,15 +55,13 @@ class ShopCollectionViewController: UICollectionViewController {
         
         let selectedCell = self.collectionView?.cellForItem(at: indexPath) as! ShopCollectionViewCell
         let selectedItem = selectedCell.itemName
-        
         let shopAlert = UIAlertController(title: "1000 points", message: "buy this?", preferredStyle: .alert)
         
         shopAlert.addAction(UIAlertAction(title: "ok", style: .default, handler: { (action) -> Void in
             
             if User.sharedInstance.points! >= 1000 {
             User.sharedInstance.removePoints(used: 1000)
-                // add to inventory
-            User.sharedInstance.items?.append(selectedItem)
+            User.sharedInstance.addItem(item: selectedItem)
             
             } else {
                 print("dont have enough points")
