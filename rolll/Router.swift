@@ -43,8 +43,8 @@ class Router: NSObject {
         return home().instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
     }
     
-    fileprivate class func shopVC() -> ShopCollectionViewController {
-        return shop().instantiateViewController(withIdentifier: "ShopCollectionViewController") as! ShopCollectionViewController
+    fileprivate class func shopVC() -> ShopViewController {
+        return shop().instantiateViewController(withIdentifier: "ShopViewController") as! ShopViewController
     }
     
     fileprivate class func signInVC() -> SignInViewController {
