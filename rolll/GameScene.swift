@@ -225,7 +225,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     newGame()
                 }
                 else if back.contains(location){
-                    print("back")
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "goBack"), object: nil)
                 }
             }
         }

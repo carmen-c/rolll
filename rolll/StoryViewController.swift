@@ -13,6 +13,7 @@ class StoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         User.sharedInstance.addPoints(earned: 5000)
+        User.sharedInstance.addItem(item: "calendar3")
     }
 
     override func didReceiveMemoryWarning() {

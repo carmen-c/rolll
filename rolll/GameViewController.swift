@@ -11,6 +11,10 @@ import SpriteKit
 
 
 class GameViewController: UIViewController {
+    
+    override func awakeFromNib() {
+        NotificationCenter.default.addObserver(self, selector: #selector(backButton), name: NSNotification.Name(rawValue: "goBack"), object: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,15 +50,21 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden : Bool {
         return true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    // MARK: - Navigation
+    
+    func backButton() {
+        _ = self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
 
     /*
-    // MARK: - Navigation
+    
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
