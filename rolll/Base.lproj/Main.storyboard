@@ -92,7 +92,7 @@
                         <outlet property="emailTextField" destination="HVw-pB-8Pv" id="heK-ic-BcA"/>
                         <outlet property="passwordTextField" destination="uqR-Ew-fil" id="JcH-zC-XtF"/>
                         <segue destination="nLP-ph-kZ4" kind="show" identifier="story" id="QKz-CH-fmS"/>
-                        <segue destination="RLD-5r-kzI" kind="show" identifier="home" id="fHl-ZO-009"/>
+                        <segue destination="IfV-20-edT" kind="show" identifier="home" id="fHl-ZO-009"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -182,18 +182,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xpI-7v-8zP"/>
                     <connections>
                         <outlet property="inventory" destination="cWh-yr-UNS" id="4kX-H0-va0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWK-tV-ter" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="640.92953523238384"/>
+            <point key="canvasLocation" x="1879.2" y="640.92953523238384"/>
         </scene>
         <!--Shop View Controller-->
         <scene sceneID="oj3-e8-IDT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3RG-BJ-t5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ShopViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vwg-tg-1wf" customClass="ShopViewController" customModule="rolll" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NtV-m3-g84"/>
@@ -276,9 +276,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pointsLabel" destination="mxg-SR-elg" id="m9q-r8-ENi"/>
                         <outlet property="shopCollectionView" destination="m8J-pF-FfC" id="dQL-MQ-eDH"/>
+                        <outlet property="shopkeeperGreeting" destination="uQb-MB-9Pr" id="lP9-Jo-cqs"/>
+                        <outlet property="shopkeeperImage" destination="XZe-rM-ywS" id="Fiu-Ja-Pp8"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3RG-BJ-t5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940" y="1384"/>
         </scene>
@@ -314,6 +318,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQV-LJ-H7e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940" y="-121.88905547226388"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Icj-Fv-WOY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IfV-20-edT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EPw-bg-QKQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RLD-5r-kzI" kind="relationship" relationship="rootViewController" id="5P1-Mf-KET"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAE-6k-VwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="640.92953523238384"/>
         </scene>
     </scenes>
 </document>

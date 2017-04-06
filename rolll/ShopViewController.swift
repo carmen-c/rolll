@@ -14,15 +14,30 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     // MARK: - Properties -
 
+    @IBOutlet weak var shopkeeperImage: UIImageView!
+    
+    @IBOutlet weak var shopkeeperGreeting: UILabel!
+    @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var shopCollectionView: UICollectionView!
+    
+    
     let allItems = ItemDatabase.all
     
     // MARK: - View -
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        setUp()
     }
+    
+    func setUp() {
+        let userPoints = User.sharedInstance.points
+        pointsLabel.text = "\(userPoints)"
+        shopkeeperGreeting.text = "welcome"
+//        shopkeeperImage.image = UIImage(named: <#T##String#>)
+      
+    }
+    
     
     //MARK: - Collection View -
     func numberOfSections(in collectionView: UICollectionView) -> Int {

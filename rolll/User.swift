@@ -10,6 +10,8 @@ import Foundation
 import Firebase
 
 let userRef = FIRDatabase.database().reference(withPath: "users")
+let userID = FIRAuth.auth()?.currentUser?.uid
+let currentUser = userRef.child(userID!)
 
 class User: NSObject {
     
@@ -33,14 +35,13 @@ class User: NSObject {
     }
     
     func saveToDatabase(completion: @escaping () -> ()) {
-        let currentUserRef = userRef.child(self.uid!)
-        currentUserRef.setValue(self.toDictionary()) { error, ref in
+        currentUser.setValue(self.toDictionary()) { error, ref in
             completion()
         }
     }
     
     func setupUser(completion: @escaping () -> ()) {
-        userRef.child(self.uid!).observe(.value, with: { snapshot in
+        currentUser.observe(.value, with: { snapshot in
             
             let snapshotValue = snapshot.value as! [String: Any?]
             self.items = snapshotValue["items"] as? [String]
@@ -52,22 +53,18 @@ class User: NSObject {
     
     func addItem(item: String) {
         self.items?.append(item)
-        let currentUser = User.sharedInstance
-        let currentUserRef = userRef.child(currentUser.uid!)
-        currentUserRef.updateChildValues(["items":self.items!])
+        currentUser.updateChildValues(["items":self.items!])
     }
     
     
     func addPoints(earned: Int) {
-        if points != nil {
-            points! += earned
-        } else {
+        if points == nil {
             points = earned
+        } else {
+            points! += earned
         }
-        let currentUser = User.sharedInstance
-        let currentUserRef = userRef.child(currentUser.uid!)
-        currentUserRef.updateChildValues(["points":self.points!])
-    }
+        currentUser.updateChildValues(["points":self.points!])
+        }
     
     func removePoints(used: Int) {
         if points! >= used {
@@ -75,9 +72,7 @@ class User: NSObject {
         } else {
             print("not enough points error")
         }
-        let currentUser = User.sharedInstance
-        let currentUserRef = userRef.child(currentUser.uid!)
-        currentUserRef.updateChildValues(["points":self.points!])
+        currentUser.updateChildValues(["points":self.points!])
     }
     
 }

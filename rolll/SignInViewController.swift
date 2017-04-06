@@ -29,7 +29,9 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
-                self.performSegue(withIdentifier: loginSegue, sender: nil)
+                User.sharedInstance.setupUser(completion: {
+                    self.performSegue(withIdentifier: loginSegue, sender: nil)
+                })
             }else{
             }
         }

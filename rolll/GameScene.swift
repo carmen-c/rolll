@@ -60,7 +60,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             back.isUserInteractionEnabled = true
         }
 
-        
         motionManager.startAccelerometerUpdates()
         createEnemies()
         keepScore()
@@ -86,14 +85,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func gameOver() {
-        let player = childNode(withName: "player") as! SKSpriteNode
-        
         isPlaying = false
+        
+        let player = childNode(withName: "player") as! SKSpriteNode
+        if action(forKey: "count") != nil {removeAction(forKey: "countdown")}
+        if action(forKey: "spawning") != nil {removeAction(forKey: "spawning")}
+        
+        User.sharedInstance.addPoints(earned: score)
         player.isHidden = true
         restart.isHidden = false
         back.isHidden = false
-        if action(forKey: "count") != nil {removeAction(forKey: "countdown")}
-        if action(forKey: "spawning") != nil {removeAction(forKey: "spawning")}
     }
     
     func counter() {
@@ -255,7 +256,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         #endif
         
         if (!intersects(player)) {
+            if isPlaying == true {
             gameOver()
+            }
         }
 
     }

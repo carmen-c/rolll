@@ -15,9 +15,10 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = true
+        
         if let scene = GameScene(fileNamed:"MyScene") {
-           
-            
+        
             let skView = self.view as! SKView
             skView.showsFPS = true
             skView.showsNodeCount = true
