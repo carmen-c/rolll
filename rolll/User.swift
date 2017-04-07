@@ -52,7 +52,11 @@ class User: NSObject {
     }
     
     func addItem(item: String) {
-        self.items?.append(item)
+        if items == nil {
+            items = ["calendar3"]
+        } else {
+            items?.append("calendar3")
+        }
         currentUser.updateChildValues(["items":self.items!])
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F626CB01E982603000E6E95 /* Shopkeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F626CAF1E982603000E6E95 /* Shopkeeper.swift */; };
 		1F6CFB9F1E6FC3A30007F28A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFB9E1E6FC3A30007F28A /* GameScene.swift */; };
 		1F6CFBA11E6FCC8E0007F28A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CFBA01E6FCC8E0007F28A /* GameViewController.swift */; };
 		1F6FD5791E67A7A300B98A04 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD5781E67A7A300B98A04 /* Authenticate.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		04B6AA718E4B76882DDD0DF0 /* Pods_rolll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rolll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F626CAF1E982603000E6E95 /* Shopkeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shopkeeper.swift; sourceTree = "<group>"; };
 		1F6CFB9E1E6FC3A30007F28A /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		1F6CFBA01E6FCC8E0007F28A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		1F6FD5781E67A7A300B98A04 /* Authenticate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
@@ -127,7 +129,7 @@
 		1FA136741E63A9490024C561 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1FD2EA601E6A624E005AB555 /* finish? */,
+				1FD2EA601E6A624E005AB555 /* just need finishing touches */,
 				1FD2EA5F1E6A6247005AB555 /* todo */,
 			);
 			name = "View Controller";
@@ -151,6 +153,7 @@
 				1F6FD5781E67A7A300B98A04 /* Authenticate.swift */,
 				1F6FD57A1E67AC9300B98A04 /* User.swift */,
 				1F9293931E8B168900AC114C /* Router.swift */,
+				1F626CAF1E982603000E6E95 /* Shopkeeper.swift */,
 				1F9BED351E863BE700D38958 /* InventoryManager.swift */,
 			);
 			name = Model;
@@ -162,19 +165,19 @@
 				1F9293991E8DD86000AC114C /* StoryViewController.swift */,
 				1FD2EA4A1E6A5EA1005AB555 /* HomeViewController.swift */,
 				1F92938F1E8B00AC00AC114C /* ItemCollectionViewCell.swift */,
-				1F9293951E8DBDED00AC114C /* ShopViewController.swift */,
-				1F9BED401E89B44E00D38958 /* ShopCollectionViewCell.swift */,
 			);
 			name = todo;
 			sourceTree = "<group>";
 		};
-		1FD2EA601E6A624E005AB555 /* finish? */ = {
+		1FD2EA601E6A624E005AB555 /* just need finishing touches */ = {
 			isa = PBXGroup;
 			children = (
 				1FA136721E63A9430024C561 /* SignInViewController.swift */,
 				1F6CFBA01E6FCC8E0007F28A /* GameViewController.swift */,
+				1F9293951E8DBDED00AC114C /* ShopViewController.swift */,
+				1F9BED401E89B44E00D38958 /* ShopCollectionViewCell.swift */,
 			);
-			name = "finish?";
+			name = "just need finishing touches";
 			sourceTree = "<group>";
 		};
 		50FA13D0720236653CABC3BF /* Frameworks */ = {
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F92939A1E8DD86000AC114C /* StoryViewController.swift in Sources */,
+				1F626CB01E982603000E6E95 /* Shopkeeper.swift in Sources */,
 				1F6FD5791E67A7A300B98A04 /* Authenticate.swift in Sources */,
 				1F9BED361E863BE700D38958 /* InventoryManager.swift in Sources */,
 				1F9293961E8DBDED00AC114C /* ShopViewController.swift in Sources */,

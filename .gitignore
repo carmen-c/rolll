@@ -4,3 +4,4 @@ rolll/GoogleService-Info.plist
 rolll/rolll.entitlements
 rolll/Constants.swift
 rolll/itemDatabase.swift
+rolll/Shopkeeper.swift

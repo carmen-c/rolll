@@ -30,19 +30,29 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setUp()
     }
     
+    //MARK: - Functions -
+    
     func setUp() {
-        let userPoints = User.sharedInstance.points
-        pointsLabel.text = "\(userPoints)"
-        shopkeeperGreeting.text = "welcome"
 //        shopkeeperImage.image = UIImage(named: <#T##String#>)
-      
+        updatePoints()
+        callShopkeeper()
+    }
+    
+    func callShopkeeper() {
+//        shopkeeperImage.image = UIImage(named: <#T##String#>)
+        shopkeeperGreeting.text = Shopkeeper.newGreeting()
+    }
+    
+    func updatePoints() {
+        if let userPoints = User.sharedInstance.points {
+            pointsLabel.text = "points: \(userPoints)"
+        } else {
+        }
+        pointsLabel.setNeedsDisplay()
     }
     
     
     //MARK: - Collection View -
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allItems.count
@@ -65,9 +75,12 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
             if User.sharedInstance.points! >= 1000 {
                 User.sharedInstance.removePoints(used: 1000)
                 User.sharedInstance.addItem(item: selectedItem)
+                self.updatePoints()
                 
             } else {
-                print("dont have enough points")
+                let shopAlert2 = UIAlertController(title: "You don't have enough points", message: "go earn more points!", preferredStyle: .alert)
+                shopAlert2.addAction(UIAlertAction(title: "ok", style: .default))
+                self.present(shopAlert2, animated: false, completion: nil)
             }
         }))
         shopAlert.addAction(UIAlertAction(title: "cancel", style: .default))

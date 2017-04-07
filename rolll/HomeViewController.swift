@@ -17,8 +17,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @IBOutlet weak var inventory: UICollectionView!
     
-    let itemsOwned: [String] = []
-    
+    let itemsOwned: [String] = User.sharedInstance.items ?? []
     
     //MARK: - Views -
     override func viewWillAppear(_ animated: Bool) {
@@ -52,12 +51,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     //MARK: - Functions -
-
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     
     //MARK: - Collection View -
@@ -68,6 +62,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: itemReuseIdentifier, for: indexPath) as! ItemCollectionViewCell
+        cell.setup(itemImage: itemsOwned[indexPath.row])
         return cell
     }
     
@@ -77,14 +72,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedCell = self.inventory.cellForItem(at: indexPath) as! ItemCollectionViewCell
+        let selectedItem = selectedCell.itemName
+        
+        
     }
-    */
+
 
 }

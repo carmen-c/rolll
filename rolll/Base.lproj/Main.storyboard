@@ -254,8 +254,8 @@
                                     <constraint firstAttribute="width" constant="100" id="HjN-ka-KK4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQb-MB-9Pr">
-                                <rect key="frame" x="128" y="57" width="34" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chat" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQb-MB-9Pr">
+                                <rect key="frame" x="128" y="57" width="231" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -270,6 +270,7 @@
                             <constraint firstItem="XZe-rM-ywS" firstAttribute="top" secondItem="OTV-z0-5aC" secondAttribute="top" constant="20" id="RxG-LP-wNK"/>
                             <constraint firstItem="Pt5-lx-07s" firstAttribute="top" secondItem="m8J-pF-FfC" secondAttribute="bottom" constant="20" id="WGE-u5-dqA"/>
                             <constraint firstItem="m8J-pF-FfC" firstAttribute="top" secondItem="XZe-rM-ywS" secondAttribute="bottom" constant="20" id="cFe-YX-iov"/>
+                            <constraint firstItem="uQb-MB-9Pr" firstAttribute="trailing" secondItem="OTV-z0-5aC" secondAttribute="trailingMargin" id="czt-9v-GL3"/>
                             <constraint firstItem="uQb-MB-9Pr" firstAttribute="leading" secondItem="XZe-rM-ywS" secondAttribute="trailing" constant="8" id="huh-Uf-vpD"/>
                             <constraint firstItem="XZe-rM-ywS" firstAttribute="leading" secondItem="OTV-z0-5aC" secondAttribute="leading" constant="20" id="iDJ-9y-2MD"/>
                             <constraint firstItem="m8J-pF-FfC" firstAttribute="leading" secondItem="OTV-z0-5aC" secondAttribute="leadingMargin" id="xrx-Wx-jpQ"/>
@@ -284,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RG-BJ-t5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="1384"/>
+            <point key="canvasLocation" x="940" y="1383.9580209895053"/>
         </scene>
         <!--Story View Controller-->
         <scene sceneID="jH7-GJ-MIK">
